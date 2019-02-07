@@ -2,6 +2,11 @@
 import java.awt.*;
 import java.awt.event.*;
 
+
+
+
+
+
 public class FrameTest {	
 	
     public static void main(String args[]) {
@@ -12,6 +17,8 @@ public class FrameTest {
     	
     	TextField t1 = new TextField(10);    	
     	TextField t2 = new TextField(10);
+    	
+    	
 
     	
     	Button b1 = new Button("OK");
@@ -25,6 +32,10 @@ public class FrameTest {
     	f.add(t2);
     	f.add(b1);
     	f.add(b2);
+    	
+    	
+    	//first option to close window
+        f.addWindowListener(new FensterBeobachter());
     
     	   	
          b1.addActionListener(new ActionListener() {
@@ -49,13 +60,13 @@ public class FrameTest {
            }
          });
          
-         
-         f.addWindowListener(new WindowAdapter() {
-             public void windowClosing(WindowEvent we) {
-         		System.exit(0);
-              }
-          }
-     );
+         //Second option to close window
+	         f.addWindowListener(new WindowAdapter() {
+	             public void windowClosing(WindowEvent we) {
+	         		System.exit(0);
+	              }
+	          }
+	     );
    		
          f.setSize(300, 400);
          f.setLocationRelativeTo(null);      
